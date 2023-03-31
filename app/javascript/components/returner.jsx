@@ -1,5 +1,3 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -10,14 +8,6 @@ const navigation = [
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
 ]
-
-interface AppProps {
-  arg: string;
-}
-
-const App = ({ arg }: AppProps) => {
-  return <div>{`Hello, ${arg}!`}</div>;
-};
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -167,14 +157,8 @@ export default function Example() {
     </div>
   )
 }
-// document.addEventListener("DOMContentLoaded", () => {
-//   const rootEl = document.getElementById("root");
-//   ReactDOM.render(<App arg="Rails 7 with ESBuild" />, rootEl);
-// });
 
 document.addEventListener("DOMContentLoaded", () => {
-  ReactDOM.render(
-    <Example />,
-    document.body.appendChild(document.createElement("div"))
-  );
+  const rootEl = document.getElementById("root");
+  ReactDOM.render(<App arg="Rails 7 with ESBuild" />, rootEl);
 });
