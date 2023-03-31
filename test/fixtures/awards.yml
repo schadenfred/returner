@@ -1,0 +1,15 @@
+# # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recipient: two 
+  granter: one 
+  amount: 1000
+  purpose: be nice
+  
+
+two:
+  granter: one 
+  recipient: three
+  amount: 2000
+  purpose: be good
+  

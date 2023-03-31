@@ -1,0 +1,14 @@
+# # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ein: 12345
+  name: United Way
+
+two:
+  ein: 68912345
+  name: Red Cross
+
+
+three:
+  ein: 34892345
+  name: St. Vincent's shelter

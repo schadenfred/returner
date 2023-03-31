@@ -94,7 +94,6 @@ group :test do
   gem "minitest-focus"
   gem "minitest-hooks"
   gem "minitest-around"
-  gem "minitest-spec-rails"
   gem "mocha"
   gem "shoulda", "~> 4.0"
 end
