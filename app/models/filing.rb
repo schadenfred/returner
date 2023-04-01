@@ -19,13 +19,12 @@ class Filing < ApplicationRecord
   end
 
   def description
-    array = Array.new.tap do |a|
+    array = [].tap do |a|
       a << "#{filer.name}'s #{tax_year} filing declares they gave #{awards.count}"
       a << 'awards'.pluralize(awards.count, 'award').to_s
       a << "to #{recipients.count} #{'different recipients'.pluralize(recipients.count, 'recipient')}"
-      a << "totaling #{number_to_currency(awards.pluck(:amount).sum)}."
-      a 
-    end 
+      a << "totaling #{awards.empty? ? 0 : number_to_currency(awards.pluck(:amount).sum)}."
+    end
     array.join(' ')
   end
 end
