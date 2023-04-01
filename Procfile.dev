@@ -1,4 +1,2 @@
-web: unset PORT && bin/rails server
-css: yarn build:css --watch
-js: yarn start --watch
-
+web: bin/rails server -p 3000
+js: npm run watch
