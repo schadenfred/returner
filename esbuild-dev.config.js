@@ -27,7 +27,7 @@ async function builder() {
       js: ' (() => new EventSource("http://localhost:8082").onmessage = () => location.reload())();',
     },
   })
-  chokidar.watch(["./app/javascript/**/*.js", "./app/javascript/**/*.jsx", "./app/views/**/*.html.erb", "./app/assets/stylesheets/*.css"]).on('all', (event, path) => {
+  chokidar.watch(["./app/javascript/**/*.js", "./app/javascript/**/*.jsx", "./app/views/**/*.jbuilder", "./app/views/**/*.html.erb", "./app/assets/stylesheets/*.css"]).on('all', (event, path) => {
     // if (path.includes("javascript")) {
     //   result.build()
     // }

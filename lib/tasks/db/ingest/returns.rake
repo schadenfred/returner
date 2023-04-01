@@ -33,7 +33,7 @@ namespace 'db:ingest' do
     end
   end
 
-  private
+  # private
 
   def ingest_filer(doc)
     filer = doc.xpath('//Filer')
@@ -52,7 +52,7 @@ namespace 'db:ingest' do
     tax_period_end_date = doc.xpath('//Return//ReturnHeader//TaxPeriodEndDt').text
     @filing = @filer
               .filings
-              .where(return_timestamp: return_timestamp, tax_period_end_date: tax_period_end_date)
+              .where(return_timestamp:, tax_period_end_date:)
               .first_or_create
   end
 
@@ -76,7 +76,7 @@ namespace 'db:ingest' do
       purpose = award.xpath('PurposeOfGrantTxt').text
       recipient = ingest_recipient(award)
       @filing.awards.where(
-        granter: @filer, recipient: recipient, amount: amount, purpose: purpose
+        granter: @filer, recipient:, amount:, purpose:
       ).first_or_create
     end
   end

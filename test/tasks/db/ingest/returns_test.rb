@@ -41,7 +41,7 @@ class IngestReturnsTest < ActiveSupport::TestCase
       Given { execute }
       Given(:filer) { Org.find_by(ein: '200253310') }
       Given(:recipient) { Org.find_by(ein: '951980801') }
-      Given(:awards) { Award.where(granter: filer, recipient: recipient) }
+      Given(:awards) { Award.where(granter: filer, recipient:) }
 
       describe 'filer' do
         Then do
