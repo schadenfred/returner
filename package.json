@@ -10,6 +10,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
     "esbuild": "^0.17.14",
+    "pikaday": "^1.8.2",
     "postcss": "^8.4.21",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^15.1.0",
