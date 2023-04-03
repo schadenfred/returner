@@ -1,11 +1,14 @@
-/* global window */
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './components/App';
 
-import { Application } from '@hotwired/stimulus';
+const container = document.getElementById('root');
+const root = createRoot(container);
 
-const application = Application.start();
-
-// Configure Stimulus development experience
-application.debug = false;
-window.Stimulus = application;
-
-export { application };
+document.addEventListener('DOMContentLoaded', () => {
+  root.render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+});

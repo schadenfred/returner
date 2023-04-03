@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
-import FilingList from './FilingList';
+import EventList from './EventList';
+import { Routes, Route } from 'react-router-dom';
+import Event from './Event';
 
-const Filer = () => {
+const Editor = () => {
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -10,7 +12,7 @@ const Filer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await window.fetch('/api/v1/filers');
+        const response = await window.fetch('/api/events');
         if (!response.ok) throw Error(response.statusText);
         const data = await response.json();
         setEvents(data);
@@ -29,10 +31,19 @@ const Filer = () => {
     <>
       <Header />
       {isError && <p>Something went wrong. Check the console.</p>}
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          <EventList events={events} />
 
-      {isLoading ? <p>Loading...</p> : <FilingList events={events} />}
+          <Routes>
+            <Route path=":id" element={<Event events={events} />} />
+          </Routes>
+        </>
+      )}
     </>
   );
 };
 
-export default Filer;
+export default Editor;
