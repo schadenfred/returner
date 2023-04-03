@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_29_222822) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_03_230903) do
   create_table "awards", force: :cascade do |t|
     t.integer "granter_id"
     t.integer "recipient_id"
@@ -28,6 +28,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_29_222822) do
     t.datetime "updated_at", null: false
     t.index ["award_id"], name: "index_awards_filings_on_award_id"
     t.index ["filing_id"], name: "index_awards_filings_on_filing_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "event_type"
+    t.date "event_date"
+    t.text "title"
+    t.string "speaker"
+    t.string "host"
+    t.boolean "published"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "filings", force: :cascade do |t|
