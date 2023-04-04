@@ -7,7 +7,7 @@ import App from "../components/App";
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addFilerListener('DOMContentLoaded', () => {
   root.render(
     <StrictMode>
       <App />

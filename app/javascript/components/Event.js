@@ -9,28 +9,28 @@ const Event = ({ events }) => {
   return (
     <>
       <h2>
-        {event.event_date}
+        {event.ein}
         {' - '}
-        {event.event_type}
+        {event.name}
       </h2>
       <ul>
         <li>
-          <strong>Type:</strong> {event.event_type}
+          <strong>Type:</strong> {event.ein}
         </li>
         <li>
-          <strong>Date:</strong> {event.event_date}
+          <strong>Date:</strong> {event.ein}
         </li>
         <li>
-          <strong>Title:</strong> {event.title}
+          <strong>Title:</strong> {event.ein}
         </li>
         <li>
-          <strong>Speaker:</strong> {event.speaker}
+          <strong>Speaker:</strong> {event.ein}
         </li>
         <li>
-          <strong>Host:</strong> {event.host}
+          <strong>Host:</strong> {event.ein}
         </li>
         <li>
-          <strong>Published:</strong> {event.published ? 'yes' : 'no'}
+          <strong>Published:</strong> {event.ein}
         </li>
       </ul>
     </>
@@ -41,12 +41,8 @@ Event.propTypes = {
   events: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      event_type: PropTypes.string.isRequired,
-      event_date: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      speaker: PropTypes.string.isRequired,
-      host: PropTypes.string.isRequired,
-      published: PropTypes.bool.isRequired,
+      ein: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
     })
   ).isRequired,
 };

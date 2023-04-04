@@ -68,12 +68,12 @@ header h1:hover {
   height: calc(100vh - 145px);
 }
 
-.eventList {
+.FilerList {
   background: #f6f6f6;
   padding: 16px;
 }
 
-.eventList h2 {
+.FilerList h2 {
   font-size: 20px;
   padding: 8px 6px 10px;
 }
@@ -87,12 +87,12 @@ header h1:hover {
   margin-bottom: 10px;
 }
 
-.eventList li:hover,
+.FilerList li:hover,
 a.active {
   background: #f8e5ce;
 }
 
-.eventList a {
+.FilerList a {
   display: block;
   color: black;
   text-decoration: none;
@@ -100,7 +100,7 @@ a.active {
   padding: 8px 6px 10px;
 }
 
-.eventList h2>a {
+.FilerList h2>a {
   color: #236fff;
   font-size: 15px;
   float: right;
