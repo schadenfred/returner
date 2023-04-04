@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :filings, format: :json
       resources :awards
-      resources :filers, format: :json
+      resources :filers, format: :json do
+        resources :filings, format: :json
+      end
       resources :orgs do
         resources :recieved
         resources :granted
@@ -16,10 +18,10 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: redirect('/events')
+  root to: redirect('/filers')
 
+  get 'filers', to: 'site#index'
   get 'events', to: 'site#index'
-  get 'events/new', to: 'site#index'
   get 'events/:id', to: 'site#index'
-  get 'events/:id/edit', to: 'site#index'
+  get 'filers/:id', to: 'site#index'
 end

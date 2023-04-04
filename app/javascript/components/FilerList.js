@@ -23,7 +23,7 @@ const FilerList = ({ events }) => {
       .filter((el) => matchSearchTerm(el))
       .map((event) => (
         <li key={event.id}>
-          <NavLink to={`/events/${event.id}`}>
+          <NavLink to={`/filers/${event.id}`}>
             {event.ein}
             {' - '}
             {event.name}

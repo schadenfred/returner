@@ -7,7 +7,7 @@ import './App.css';
 const App = () => (
   <>
     <Routes>
-      <Route path="events/*" element={<Editor />} />
+      <Route path="filers/*" element={<Editor />} />
     </Routes>
     <ToastContainer />
   </>
