@@ -18,10 +18,10 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: redirect('/filers')
-
   get 'filers', to: 'site#index'
   get 'events', to: 'site#index'
   get 'events/:id', to: 'site#index'
   get 'filers/:id', to: 'site#index'
+
+  root to: 'site#index'
 end

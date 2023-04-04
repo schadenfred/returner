@@ -18,7 +18,7 @@ const FilerList = ({ events }) => {
     );
   };
 
-  const renderEvents = (eventArray) =>
+  const renderFilers = (eventArray) =>
     eventArray
       .filter((el) => matchSearchTerm(el))
       .map((event) => (
@@ -42,7 +42,7 @@ const FilerList = ({ events }) => {
         onKeyUp={updateSearchTerm}
       />
 
-      <ul>{renderEvents(events)}</ul>
+      <ul>{renderFilers(events)}</ul>
     </section>
   );
 };
