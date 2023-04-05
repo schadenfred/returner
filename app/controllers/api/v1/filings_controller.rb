@@ -5,16 +5,15 @@ class Api::V1::FilingsController < ApplicationController
     @filings = Filing.all
   end
 
-  def show
-  end
+  def show; end
 
   private
-    def set_filing
-      @filing = Filing.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def filing_params
-      params.fetch(:filing, {})
-    end
+  def set_filing
+    @filing = Filing.find(params[:id])
+  end
+
+  def filing_params
+    params.fetch(:filing, {})
+  end
 end

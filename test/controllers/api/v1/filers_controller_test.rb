@@ -13,5 +13,9 @@ class Api::V1::FilersControllerTest < ActionDispatch::IntegrationTest
     Given(:json) { JSON.parse(response.body) }
     Then { assert_response 200 }
     And { assert_equal 'United Way', json['name'] }
+
+    describe 'filer data' do
+      # Then { assert_equal 'blah', json }
+    end
   end
 end
