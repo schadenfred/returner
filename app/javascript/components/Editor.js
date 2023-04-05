@@ -3,12 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './Header';
-import Event from './Event';
-// import EventForm from './EventForm';
+import Filer from './Filer';
 import FilerList from './FilerList';
 
 const Editor = () => {
-  const [events, setEvents] = useState([]);
+  const [filers, setFilers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -19,7 +18,7 @@ const Editor = () => {
         if (!response.ok) throw Error(response.statusText);
 
         const data = await response.json();
-        setEvents(data);
+        setFilers(data);
       } catch (error) {
         handleAjaxError(error);
       }
@@ -39,12 +38,12 @@ const Editor = () => {
         <p className='loading'>Loading...</p>
       ) : (
         <div className="grid">
-          <FilerList events={events} />
+          <FilerList filers={filers} />
 
           <Routes>
             <Route
               path=":id"
-              element={<Event events={events} />}
+              element={<Filer filers={filers} />}
             />
           </Routes>
         </div>

@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 
-const FilerList = ({ events }) => {
+const FilerList = ({ filers }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const searchInput = useRef(null);
 
@@ -11,22 +11,21 @@ const FilerList = ({ events }) => {
   };
 
   const matchSearchTerm = (obj) => {
-    // eslint-disable-next-line camelcase
     const { id, published, created_at, updated_at, ...rest } = obj;
     return Object.values(rest).some(
       (value) => value.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
     );
   };
 
-  const renderFilers = (eventArray) =>
-    eventArray
+  const renderFilers = (filerArray) =>
+    filerArray
       .filter((el) => matchSearchTerm(el))
-      .map((event) => (
-        <li key={event.id}>
-          <NavLink to={`/filers/${event.id}`}>
-            {event.ein}
+      .map((filer) => (
+        <li key={filer.id}>
+          <NavLink to={`/filers/${filer.id}`}>
+            {filer.ein}
             {' - '}
-            {event.name}
+            {filer.name}
 
           </NavLink>
         </li>
@@ -42,13 +41,13 @@ const FilerList = ({ events }) => {
         onKeyUp={updateSearchTerm}
       />
 
-      <ul>{renderFilers(events)}</ul>
+      <ul>{renderFilers(filers)}</ul>
     </section>
   );
 };
 
 FilerList.propTypes = {
-  events: PropTypes.arrayOf(
+  filers: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       ein: PropTypes.string.isRequired,
