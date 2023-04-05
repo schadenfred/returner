@@ -20,13 +20,14 @@ const FilerList = ({ filers }) => {
   const renderFilers = (filerArray) =>
     filerArray
       .filter((el) => matchSearchTerm(el))
+      .sort((a, b) => a.ein - b.ein)
+
       .map((filer) => (
         <li key={filer.id}>
           <NavLink to={`/filers/${filer.id}`}>
             {filer.ein}
             {' - '}
             {filer.name}
-
           </NavLink>
         </li>
       ));

@@ -2,41 +2,37 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 
-const FilingList = ({ filings }) => {
+const FilingList = ({ filer }) => {
+  const filings = filer.filings
   const renderFilings = (filingArray) =>
+
     filingArray
+      .sort((a, b) => new Date(b.return_timestamp) - new Date(a.return_timestamp))
       .map((filing) => (
         <li key={filing.id}>
-          <NavLink to={`/filings/${filing.id}`}>
-            {filing.ein}
-            {' - '}
-            {filing.name}
-
+          <NavLink to={`/filers/${filer.id}/filings/${filing.id}`}>
+            {filing.tax_year}
           </NavLink>
         </li>
       ));
 
   return (
     <section className="FilingList">
-      <input
-        className="search"
-        placeholder="Search"
-        type="text"
-        ref={searchInput}
-        onKeyUp={updateSearchTerm}
-      />
-
+      Filings:
       <ul>{renderFilings(filings)}</ul>
     </section>
   );
 };
 
-FilingList.propTypes = {
-  filings: PropTypes.arrayOf(
-    PropTypes.shape({
-      tax_year: PropTypes.number.isRequired,
-    })
-  ).isRequired,
-};
+// FilingList.propTypes = {
+//   filings: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       tax_year: PropTypes.string.isRequired,
+//       return_timestamp: PropTypes.string.isRequired,
+//       tax_period_end_date: PropTypes.string.isRequired,
+//       is_valid_to_irs: PropTypes.string,
+//     })
+//   ).isRequired,
+// };
 
 export default FilingList;

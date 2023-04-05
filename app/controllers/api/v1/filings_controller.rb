@@ -2,6 +2,7 @@ class Api::V1::FilingsController < ApplicationController
   before_action :set_filing, only: %i[show]
 
   def index
+    byebug
     @filings = Filing.all
   end
 
