@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import FilingList from './FilingList';
-import FilerDetail from './FilerDetail';
 
 const Filer = ({ filers }) => {
   const { id } = useParams();
@@ -14,7 +13,6 @@ const Filer = ({ filers }) => {
         {filer.ein}
         {' - '}
         {filer.name}
-        show awards
       </h2>
       <FilingList filer={filer} />
 

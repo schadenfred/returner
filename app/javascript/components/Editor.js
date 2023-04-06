@@ -42,7 +42,8 @@ const Editor = () => {
 
           <Routes>
             <Route
-              path=":id"
+              path=":id/*"
+
               element={<Filer filers={filers} />}
             />
           </Routes>
