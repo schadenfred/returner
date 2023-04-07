@@ -33,37 +33,7 @@ const Filing = ({ filers }) => {
         {filer.name}
         show awards
       </h2>
-      <ul>
-        <li>
-          <strong>selected Filing Filings:</strong> {filer.ein}
-          <strong>Type:</strong> {filer.ein}
-        </li>
-        <li>
-          <strong>Date:</strong> {filer.ein}
-        </li>
-        <li>
-          <strong>Title:</strong> {filer.ein}
-        </li>
-        <li>
-          <strong>Speaker:</strong> {filer.ein}
-        </li>
-        <li>
-          <strong>Host:</strong> {filer.ein}
-        </li>
-        <li>
-          <strong>Published:</strong> {filer.ein}
-        </li>
-      </ul>
-      <div className="grid">
-        <FilingList filings={filings} />
 
-        <Routes>
-          <Route
-            path=":id"
-            element={<Filing filings={filers} />}
-          />
-        </Routes>
-      </div>
     </>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 
-const FilingList = ({ filer }) => {
+const AwardList = ({ filer }) => {
   const filings = filer.filings
 
   const renderFilings = (filingArray) =>
@@ -25,15 +25,15 @@ const FilingList = ({ filer }) => {
   );
 };
 
-FilingList.propTypes = {
-  filings: PropTypes.arrayOf(
-    PropTypes.shape({
-      tax_year: PropTypes.string.isRequired,
-      return_timestamp: PropTypes.string.isRequired,
-      tax_period_end_date: PropTypes.string.isRequired,
-      is_valid_to_irs: PropTypes.string,
-    })
-  ),
-};
+// FilingList.propTypes = {
+//   filings: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       tax_year: PropTypes.string.isRequired,
+//       return_timestamp: PropTypes.string.isRequired,
+//       tax_period_end_date: PropTypes.string.isRequired,
+//       is_valid_to_irs: PropTypes.string,
+//     })
+//   ),
+// };
 
-export default FilingList;
+export default AwardList;

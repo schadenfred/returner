@@ -26,7 +26,7 @@ class IngestReturnsTest < ActiveSupport::TestCase
         ]
       end
       Then do
-        assert_difference -> { Org.count } => 135,
+        assert_difference -> { Org.count } => 132,
                           -> { Award.count } => 137,
                           -> { Filing.count } => 1,
                           -> { AwardsFiling.count } => 137 do

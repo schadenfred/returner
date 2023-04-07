@@ -5,5 +5,5 @@ class Award < ApplicationRecord
   has_many :awards_filings
   has_many :filings, through: :awards_filings
 
-  validates :granter, uniqueness: { scope: %i[recipient_id purpose] }
+  validates :granter, :recipient, presence: true
 end

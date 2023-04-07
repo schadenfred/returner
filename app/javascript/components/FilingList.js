@@ -32,7 +32,7 @@ const FilingList = ({ filer }) => {
 //       tax_period_end_date: PropTypes.string.isRequired,
 //       is_valid_to_irs: PropTypes.string,
 //     })
-//   ).isRequired,
+//   ),
 // };
 
 export default FilingList;
