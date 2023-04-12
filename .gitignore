@@ -7,9 +7,19 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignores bash aliases
+/.bash_aliases
+!/.bash_aliases_project
+
+# Ignore capybara saved pages
+/capybara/capybara-*
+
+/capybara/*
+!/capybara/.keep
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
-/db/*.sqlite3-*
+/db/*.sqlite3-journalex
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -17,24 +27,73 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore pidfiles, but keep the directory.
-/tmp/pids/*
-!/tmp/pids/
-!/tmp/pids/.keep
-
-# Ignore uploaded files in development.
+# Ignore uploaded files in development
 /storage/*
 !/storage/.keep
-/tmp/storage/*
-!/tmp/storage/
-!/tmp/storage/.keep
 
+# Ignore compiled assets files
 /public/assets
+/public/mailers/compressed/*
+/public/mailers/uncompressed/*
+!/public/mailers/.keep
+!/public/mailers/compressed/.keep
+!/public/mailers/uncompressed/.keep
+
+/public/packs
+/public/packs-test
+/node_modules
+/app/assets/builds/*
+!/app/assets/builds/.keep
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/app/assets/builds/*
-!/app/assets/builds/.keep
+# Ignore other files
+.byebug_history
+yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+.DS_Store
+*~
 
-/node_modules
+## roro
+roro/**/*.env
+roro/**/*.key
+*.key
+*.env
+!/lib/roro/stacks/**/*.key
+!/lib/roro/stacks/**/*.env
+!test/**/*.key
+!test/**/*.env
+!/.gitignore
+*.gem
+tmp/*
+!tmp/.keep
+TUTORIAL.md
+
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff
+.idea/**/*
+#.idea/**/workspace.xml
+#.idea/**/tasks.xml
+#.idea/**/usage.statistics.xml
+#.idea/**/dictionaries
+#.idea/**/shelf
+
+## circleci
+process.yml
+/config/credentials/development.key
+/config/credentials/staging.key
+/config/credentials/production.key
+
+## k8w
+mise/k8s/*
+!mise/k8s/.keep
+
+## seed data
+/db/seeds/*
+
+## Scratch paper
+scratch*.txt
