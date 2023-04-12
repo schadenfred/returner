@@ -3,46 +3,25 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
 
-const Filing = ({ filers }) => {
-  const [filings, setFilings] = useState([]);
-
+const Filing = ({ filings }) => {
   const { id } = useParams();
-  const filer = filers.find((e) => e.id === Number(id));
+  const filing = filings.find((e) => e.id === Number(id));
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await window.fetch('/api/v1/filers/`${id}`.json');
-        if (!response.ok) throw Error(response.statusText);
 
-        const data = await response.json();
-        setFilings(data);
-      } catch (error) {
-        handleAjaxError(error);
-      }
-      setIsLoading(false);
-    };
-
-    fetchData();
-  }, []);
   return (
     <>
-      <h2>
-        {filer.ein}
-        {' - '}
-        {filer.name}
-        show awards
-      </h2>
-
+      <h2>getsome</h2>
+      {/* <AwardList filer={filer} /> */}
     </>
   );
+
 };
 
 
 Filing.propTypes = {
-  filers: PropTypes.arrayOf(
+  filings: PropTypes.arrayOf(
     PropTypes.shape({
-      tax_year: PropTypes.number.isRequired,
+      tax_year: PropTypes.string.isRequired,
     })
   ).isRequired,
 };

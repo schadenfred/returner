@@ -29,8 +29,6 @@ const Editor = () => {
     fetchData();
   }, []);
 
-
-
   return (
     <>
       <Header />
@@ -43,7 +41,6 @@ const Editor = () => {
           <Routes>
             <Route
               path=":id/*"
-
               element={<Filer filers={filers} />}
             />
           </Routes>

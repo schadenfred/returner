@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => (
   <header>
-    <h1>Filing Manager</h1>
+    <h1>pReturnatural </h1>
   </header>
 );
 

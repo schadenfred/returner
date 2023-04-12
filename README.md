@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies: 
 
-Things you may want to cover:
+1. Docker version 23.0.3, build 3e7cbfd
+2. docker-compose version 1.29.2, build 5becea4c
 
-* Ruby version
+## Install:
 
-* System dependencies
+1. Start the docker compose dev service, which starts the rails server:
 
-* Configuration
+```
+docker-compose up --build dev
+```
+I like to leave this terminal running and then complete the following steps in a different terminal.
 
-* Database creation
+2. Ingest the returns:
 
-* Database initialization
+``` 
+docker-compose exec dev bundle exec rake db:ingest:returns
+```
 
-* How to run the test suite
+3. Open a shell to the dev container:
+```
+docker-compose exec dev sh
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4. From inside the dev container shell:
+```
+yarn build --watch 
+```

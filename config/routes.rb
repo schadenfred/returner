@@ -19,8 +19,6 @@ Rails.application.routes.draw do
   end
 
   get 'filers', to: 'site#index'
-  get 'events', to: 'site#index'
-  get 'events/:id', to: 'site#index'
   get 'filers/:id', to: 'site#index'
 
   root to: 'site#index'
