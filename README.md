@@ -14,12 +14,12 @@ This rails app was generated using RoRo.
 1. Normally encryption keys would be shared via a usb stick or similar. For the purposes of this exercise, however, I've generated sample keys:
 
 ``` 
-cp mise/keys/base.keyexercise mise/keys/base.key
-cp mise/keys/ci.keyexercise mise/keys/ci.key
-cp mise/keys/development.keyexercise mise/keys/development.key
-cp mise/keys/production.keyexercise mise/keys/production.key
-cp mise/keys/staging.keyexercise mise/keys/staging.key
-cp mise/keys/test.keyexercise mise/keys/test.key
+cp mise/keys/base.exercise mise/keys/base.key
+cp mise/keys/ci.exercise mise/keys/ci.key
+cp mise/keys/development.exercise mise/keys/development.key
+cp mise/keys/production.exercise mise/keys/production.key
+cp mise/keys/staging.exercise mise/keys/staging.key
+cp mise/keys/test.exercise mise/keys/test.key
 ```
 
 2. Use RoRo to decrypt your environment variables:
