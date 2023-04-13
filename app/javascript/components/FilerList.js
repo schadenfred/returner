@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const FilerList = ({ filers }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,9 +11,11 @@ const FilerList = ({ filers }) => {
   };
 
   const matchSearchTerm = (obj) => {
-    const { id, published, created_at, updated_at, ...rest } = obj;
+    // eslint-disable-next-line camelcase
+    const { id, created_at, updated_at, ...rest } = obj;
+
     return Object.values(rest).some(
-      (value) => value.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
+      (value) => value.toString().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
     );
   };
 

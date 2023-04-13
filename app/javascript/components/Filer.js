@@ -7,34 +7,25 @@ import FilingList from './FilingList';
 import Filing from './Filing';
 
 const Filer = ({ filers }) => {
-  const { filerId, filingId } = useParams();
-  const filer = filers.find((e) => e.filerId === Number(filerId));
-  // const filings = filer.filings
+  const { filerId } = useParams();
+  const filer = filers.find((e) => e.id === Number(filerId));
+  const filings = filer.filings
 
-  // exact
-  // path = {
-  //   [
-  //   "/view/:section/:year/:productId", // '/view/electronics/2020/product1'
-  //   "/view/:section/:productId"        // '/view/sportwear/product2'
-  //   ]}
-  // component = { SingleProduct }
   return (
-    <>
-      <FilingList filer={filer} />
+    <div className="filerContainer">
+      <h2>
+        {filer.ein}
+        {' - '}
+        {filer.name}
+      </h2>
+      <FilingList filings={filings} />
       <Routes>
         <Route
-          exact
-          path={
-            [
-              "filers/:filerId/filings/:filingId",
-              "filers/:filerId",
-            ]
-          }
-
-          element={<Filer filers={filers} />}
+          path="filers/:filerId/filings/:filingId"
+          element={<Filing filings={filings} />}
         />
       </Routes>
-    </>
+    </div>
   );
 };
 

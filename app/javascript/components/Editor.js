@@ -1,7 +1,7 @@
 /* global window */
 
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import Filer from './Filer';
 import FilerList from './FilerList';
@@ -9,7 +9,6 @@ import FilerList from './FilerList';
 const Editor = () => {
   const [filers, setFilers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,10 +38,12 @@ const Editor = () => {
           <FilerList filers={filers} />
 
           <Routes>
-            <Route
-              path=":id/*"
-              element={<Filer filers={filers} />}
-            />
+            <Route path="filers">
+              <Route
+                path=":filerId/*"
+                element={<Filer filers={filers} />}
+              />
+            </Route>
           </Routes>
         </div>
       )}

@@ -4,9 +4,10 @@ import { useParams } from 'react-router-dom';
 
 
 const Filing = ({ filings }) => {
-  const { id } = useParams();
-  const filing = filings.find((e) => e.id === Number(id));
-
+  const { filerId, filingId } = useParams();
+  // const filing = filings.find((e) => e.id === Number(id));
+  console.log(filerId)
+  console.log(filingId)
 
   return (
     <>

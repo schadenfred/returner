@@ -1,31 +1,31 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-import { Link, NavLink } from 'react-router-dom';
-import Filer from './Filer';
+
+import { NavLink } from 'react-router-dom';
 
 
 const FilingList = ({ filings }) => {
-  // const { id } = useParams();
-  // const renderFilings = (filingArray) =>
+  const { filerId } = useParams();
 
-  //   filingArray
+  console.log(filerId)
+  const renderFilings = (filingArray) =>
+    filingArray
+      .sort((a, b) => new Date(b.return_timestamp) - new Date(a.return_timestamp))
+      .map((filing) => (
+        <li key={filing.id}>
+          <NavLink to={`/filers/${filerId}/filings/${filing.id}`}>
+            {filing.tax_year}
+          </NavLink>
+        </li>
+      ));
 
-  //     .sort((a, b) => new Date(b.return_timestamp) - new Date(a.return_timestamp))
-  //     .map((filing) => (
-  //       <li key={filing.id}>
-  //         <NavLink to={`/filers/${filer.id}/filings/${filing.id}`}>
-  //           {filing.tax_year}
-  //         </NavLink>
-  //       </li>
-  //     ));
-
-  // return (
-  //   <section className="FilingList">
-  //     Filings:
-  //     <ul>{renderFilings(filings)}</ul>
-  //   </section>
-  // );
+  return (
+    <section className="FilingList">
+      Filings:
+      <ul>{renderFilings(filings)}</ul>
+    </section>
+  );
 };
 
 // FilingList.propTypes = {
