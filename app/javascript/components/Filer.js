@@ -1,8 +1,8 @@
 import React from 'react';
-import { Routes, Route, useNavigate, Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
 import FilingList from './FilingList';
 import Filing from './Filing';
 
@@ -18,13 +18,14 @@ const Filer = ({ filers }) => {
         {' - '}
         {filer.name}
       </h2>
+
       <FilingList filings={filings} />
       <Routes>
         <Route
-          path="filers/:filerId/filings/:filingId"
-          element={<Filing filings={filings} />}
-        />
+          path={`filers/${filerId}/filings/:filingId/*`}
+          element={<Filing filings={filings} />} />
       </Routes>
+
     </div>
   );
 };

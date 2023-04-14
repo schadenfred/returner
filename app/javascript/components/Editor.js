@@ -38,7 +38,7 @@ const Editor = () => {
           <FilerList filers={filers} />
 
           <Routes>
-            <Route path="filers">
+            <Route path="filers/*">
               <Route
                 path=":filerId/*"
                 element={<Filer filers={filers} />}

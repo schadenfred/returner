@@ -8,7 +8,6 @@ import { NavLink } from 'react-router-dom';
 const FilingList = ({ filings }) => {
   const { filerId } = useParams();
 
-  console.log(filerId)
   const renderFilings = (filingArray) =>
     filingArray
       .sort((a, b) => new Date(b.return_timestamp) - new Date(a.return_timestamp))
@@ -22,21 +21,21 @@ const FilingList = ({ filings }) => {
 
   return (
     <section className="FilingList">
-      Filings:
       <ul>{renderFilings(filings)}</ul>
     </section>
   );
 };
 
-// FilingList.propTypes = {
-//   filings: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       tax_year: PropTypes.string.isRequired,
-//       return_timestamp: PropTypes.string.isRequired,
-//       tax_period_end_date: PropTypes.string.isRequired,
-//       is_valid_to_irs: PropTypes.string,
-//     })
-//   ),
-// };
+FilingList.propTypes = {
+  filings: PropTypes.arrayOf(
+    PropTypes.shape({
+      tax_year: PropTypes.string.isRequired,
+      return_timestamp: PropTypes.string.isRequired,
+      tax_period_end_date: PropTypes.string.isRequired,
+      is_valid_to_irs: PropTypes.string,
+      url: PropTypes.string,
+    })
+  ),
+};
 
 export default FilingList;
