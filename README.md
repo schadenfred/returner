@@ -1,17 +1,18 @@
 # README
 
-## Dependencies: 
+## Install:
 
-This rails app was generated using RoRo.
+### Dependencies: 
+
+This rails app was initially generated using RoRo and these versions of docker and docker compose:
 
 1. Docker version 23.0.3, build 3e7cbfd
 2. docker-compose version 1.29.2, build 5becea4c
 
-## Install:
 
-### Decrypt environment variables using RoRo:
+### Environment variables:
 
-1. Normally encryption keys would be shared via a usb stick or similar. For the purposes of this exercise, however, I've generated sample keys:
+1. Copy the exercise keys:
 
 ``` 
 cp mise/keys/base.exercise mise/keys/base.key
@@ -22,18 +23,17 @@ cp mise/keys/staging.exercise mise/keys/staging.key
 cp mise/keys/test.exercise mise/keys/test.key
 ```
 
-2. Use RoRo to decrypt your environment variables:
+2. Expose your environment variables:
 
 ```
 docker-compose run --rm roro roro generate:exposed
 ```
 
-3. Start the docker compose dev service, which starts the rails server:
+3. Start the dev service:
 
 ```
 docker-compose up --build dev
 ```
-I like to leave this terminal running, and execute commands in the same container using a different shell.
 
 2. Open a shell into the dev container: 
 
