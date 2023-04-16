@@ -65,7 +65,7 @@ docker-compose exec dev sh
 
 3. Run the dev server:
 ```
-yarn build --watch 
+/app # yarn build --watch 
 ```
 
-The app should be running at 
+The app should be running at localhost:3000
