@@ -23,6 +23,12 @@ cp mise/keys/staging.exercise mise/keys/staging.key
 cp mise/keys/test.exercise mise/keys/test.key
 ```
 
+2. Create an empty .env file for base variables used in docker-compose.yml:
+
+```
+touch mise/env/base.env
+```
+
 2. Expose your environment variables:
 
 ```
