@@ -1,8 +1,18 @@
 # README
 
-## Install:
+This is a rails 7 app meeting the requirements for a programming exercise designed to test a developer's ability to ingest data, build an api, and consume that api using some kind of frontend app.
 
-### Dependencies: 
+## Install :
+
+The following instructions are intended to help an evaluator set this app up and run this app.
+
+### Clone the app:
+
+```
+git clone git@github.com:schadenfred/returner.git
+```
+
+### Check Dependencies: 
 
 This rails app was initially generated using RoRo and these versions of docker and docker compose:
 
@@ -23,7 +33,7 @@ cp mise/keys/staging.exercise mise/keys/staging.key
 cp mise/keys/test.exercise mise/keys/test.key
 ```
 
-2. Create an empty .env file for base variables used in docker-compose.yml:
+2. Create an empty base.env file for base variables necessary to run commands with Docker Compose:
 
 ```
 touch mise/env/base.env
@@ -47,12 +57,15 @@ docker-compose up --build dev
 docker-compose exec dev sh
 ```
 
-2. From inside the dev container, ingest the returns:
+2. From inside the dev container, migrate your databse and ingest the returns:
 ``` 
-rake db:ingest:returns
+/app # rake db:migrate 
+/app # rake db:ingest:returns
 ```
 
 3. Run the dev server:
 ```
 yarn build --watch 
 ```
+
+The app should be running at 

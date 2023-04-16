@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 import FilingList from './FilingList';
-import Filing from './Filing';
 
 const Filer = ({ filers }) => {
   const { filerId } = useParams();
@@ -23,7 +22,8 @@ const Filer = ({ filers }) => {
       <Routes>
         <Route
           path={`filers/${filerId}/filings/:filingId/*`}
-          element={<Filing filings={filings} />} />
+
+        />
       </Routes>
 
     </div>
